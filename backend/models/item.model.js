@@ -9,6 +9,10 @@ const itemsSchema = new Schema({
         unique:true,
         required:true,
     },
+    category:{
+        type: Schema.ObjectId,
+        ref:'Category',
+    },
     description:{
         type:String,
         unique:true,
@@ -28,7 +32,7 @@ const itemsSchema = new Schema({
         default:0,
         required:true,
     }
-    
+
 },{timestamps: true}
 )
 

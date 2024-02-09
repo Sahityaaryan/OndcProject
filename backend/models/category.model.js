@@ -4,7 +4,7 @@ const {model , Schema} = mongoose;
 
 const categorySchema = new Schema({
     
-    'SubCategory':{
+    'categories':{
         type:'String',
         unique:true,
     }
