@@ -5,7 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node -r dotenv/config --experimental-json-modules server.js"
+
   },
   "author": "sahityaaryan",
   "license": "ISC",

@@ -1,10 +1,12 @@
-
-require('dotenv').config();
+import dotenv from 'dotenv';
 
 import mongoose from "mongoose";
-import { DB_NAME } from "../constants.js";// 
-
-		
+// import { DB_NAME } from "../constants.js";// 
+const DB_NAME="videotube";
+	
+dotenv.config({
+    path: '../env'
+})
 
 // console.log(DB_NAME);
 
