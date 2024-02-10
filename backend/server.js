@@ -1,9 +1,19 @@
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+import categoryCreated from './routes/category.js';
+import itemCreated from './routes/itemCreation.js';
+import itemSearched from './routes/itemSearch.js';
+import categorySearched from './routes/itemSearch.js';
+import allItemSearched from './routes/fetchAll.js';
 
-import express from 'express';
+	
+dotenv.config({
+    path: '../env'
+})
+
+import express, { Router } from 'express';
 const app = express();
-import connectDB from './config/db';
+import connectDB from './config/db.js';
 const PORT = process.env.PORT;
 
 
@@ -25,7 +35,11 @@ connectDB()
 
 
 
-
+app.use("/createCategory",categoryCreated);
+app.use("/createItems",itemCreated);
+app.use("/searchItem",itemSearched);
+app.use("/searchCategory",categorySearched);
+app.use("/searchAllItem",allItemSearched);
 
 
 

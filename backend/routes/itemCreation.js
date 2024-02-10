@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { Items } from "../models/category.model";
+import { Items } from "../models/item.model";
 const router=new Router()
 
-router.post("/",async(req,res)=>{
+router.post("/findItem",async(req,res)=>{
     // const data = req.body
     try {
         const successObject=await Items.create({
@@ -18,3 +19,5 @@ router.post("/",async(req,res)=>{
         res.status(502).json({message:error.message,success:false})
     }
 })
+
+export default Router;
