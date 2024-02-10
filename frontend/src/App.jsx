@@ -1,17 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Home from './components/Home';
+import Header from './components/Header'
 import ProductCreate from './components/ProductCreate'
-import './App.css'
 
+import ModifyCategory from './components/ModifyCategory.jsx';
+import './index.css'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <ProductCreate/>
-    </>
-  )
+    <div >
+      <ModifyCategory/>
+      {/* <Header/>
+      <Home /> */}
+    </div>
+  );
 }
 
 export default App
+
