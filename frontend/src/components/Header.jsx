@@ -1,11 +1,12 @@
 import React from "react";
-
+import { Link, NavLink } from "react-router-dom";
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const [flyer, setFlyer] = React.useState(false);
   const [flyerTwo, setFlyerTwo] = React.useState(false);
 
   return (
+    <>
     <header className="fixed top-0 w-full  z-50" id="clearNav">
       <div className="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
@@ -45,9 +46,10 @@ export default function Header() {
           }
         >
           <div className="md:ml-auto md:mr-auto pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
-            <a className="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold transition duration-400">
+            <NavLink
+           to={'/'} className="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold transition duration-400">
               Home
-            </a>
+            </NavLink>
             <div className="relative">
               <button
                 type="button"
@@ -85,35 +87,24 @@ export default function Header() {
               >
                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                   <div className="relative grid gap-6 bg-black px-2 py-6 sm:gap-8 ">
-                    <a
-                      href="/"
+                    <NavLink
+                   to={'user/api/modifycategory'}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
                       <div className="ml-4">
                         <p className="text-base font-medium text-white">
-                         Add Category
+                         Modify Category
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
-                          Create a new category
+                          Create or delete an existing category
                         </p>
                       </div>
-                    </a>
-                    <a
-                      href="/"
-                      className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
-                    >
-                      <div className="ml-4">
-                        <p className="text-base font-medium text-white">
-                         Update category
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          Update an existing category
-                        </p>
-                      </div>
-                    </a>
+                    </NavLink>
+                   
 
-                    <a
-                      href="/"
+                    <NavLink
+                   to={'user/api/addproduct'}
+                      
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
                       <div className="ml-4">
@@ -124,29 +115,43 @@ export default function Header() {
                           Create a new product
                         </p>
                       </div>
-                    </a>
+                    </NavLink>
 
-                    <a
-                      href="/"
+                    <NavLink
+                   to={'user/api/modifyproduct'}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
                       <div className="ml-4">
                         <p className="text-base font-medium text-white">
-                          Update products
+                          Modify products
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
-                        Update an existing products
+                        Modify an existing products
                         </p>
                       </div>
-                    </a>
+                    </NavLink>
+
+                    <NavLink
+                   to={'productPreview'}
+                      className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
+                    >
+                      <div className="ml-4">
+                        <p className="text-base font-medium text-white">
+                          Product Preview
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                        Modify an existing products
+                        </p>
+                      </div>
+                    </NavLink>
 
                   </div>
                 </div>
               </div>
             </div>
-            <a className="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold transition duration-400">
+            <NavLink to={'about'} className="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold transition duration-400">
               About
-            </a>
+            </NavLink>
            
           </div>
           <a
@@ -185,7 +190,8 @@ export default function Header() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               title="GitHub logo"
-              className="github-link--logo"
+              className="github-NavLink
+            --logo"
             >
               <path
                 data-v-54e46119=""
@@ -199,5 +205,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
