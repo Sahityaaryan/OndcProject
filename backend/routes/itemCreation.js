@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { Items } from "../models/category.model";
-import { Items } from "../models/item.model";
+import Category  from "../models/category.model.js";
+import  Items  from "../models/item.model.js";
 const router=new Router()
 
-router.post("/findItem",async(req,res)=>{
+router.post("/",async(req,res)=>{
     // const data = req.body
     try {
         const successObject=await Items.create({
@@ -14,10 +14,10 @@ router.post("/findItem",async(req,res)=>{
             price:req.body.price,
             stock:req.body.stock,
         });
-        res.status(200).json({message:`${req.body.name} item has been listed`,success:true})
+        res.status(200).json({message:`${successObject.name} item has been listed`,success:true})
     } catch (error) {
-        res.status(502).json({message:error.message,success:false})
+        res.status(500).json({message:error.message,success:false})
     }
 })
 
-export default Router;
+export default router;

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { Category } from "../models/category.model";
-import { Items } from "../models/item.model";
+import  Category  from "../models/category.model.js";
+import Items  from "../models/item.model.js";
 const router=new Router()
 
 router.get("/",(req,res)=>{
