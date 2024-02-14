@@ -28,7 +28,7 @@ async function connectDB(){
 		console.log("Error(while connecting to db): ", error);
 
         process.exit(1);
-	}
+	}   
 
 }
 
