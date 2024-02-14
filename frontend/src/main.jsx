@@ -18,8 +18,8 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: '/',
-    // element: <App/>,
-    element: <ProductCard/>,
+    element: <App/>,
+    // element: <ProductCard/>,
     errorElement:<ErrorPage/>,
     children: [
      

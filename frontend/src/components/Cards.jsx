@@ -1,6 +1,7 @@
 export default function Cards({details}){
 
     const {name,description,imgUrl} = details;
+    
     return(
 
         <>

@@ -1,6 +1,7 @@
 import Carousel from "./Carousel"
 import SearchWithinCategory from "./SearchWithinCategory";
 import { categories, laptopProducts } from "../../public/dummyData/page"; // delete
+import ProductSearchPreview from "./ProductSearchPreview";
 export default function Home(){
 
 
@@ -59,12 +60,18 @@ export default function Home(){
     {/* <Carousel category={'laptop'}/> */}
   </div>
 
+ 
+
 
 <div>
   <SearchWithinCategory/>
 </div>
 
    
+
+<div>
+  <ProductSearchPreview/>
+  </div>
 
     </section>
         </>

@@ -35,7 +35,7 @@ export default function Carousel({category}) {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="py-24"
       >
       { category.map(function(product){
          
