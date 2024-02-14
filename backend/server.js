@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import categoryCreated from './routes/category.js';
 import itemCreated from './routes/itemCreation.js';
 import itemSearched from './routes/itemSearch.js';
-import categorySearched from './routes/itemSearch.js';
+import categorySearched from './routes/categoryFinder.js';
 import allItemSearched from './routes/fetchAll.js';
 
 	
@@ -40,6 +40,7 @@ app.use("/createItems",itemCreated);
 app.use("/searchItem",itemSearched);
 app.use("/searchCategory",categorySearched);
 app.use("/searchAllItem",allItemSearched);
+
 
 
 
