@@ -12,6 +12,10 @@ const categorySchema = new Schema({
 },{timestamps: true}
 )
 
-export const Category = model(
-    'Category',
+// const Category =model("category",categorySchema)
+// module.exports=Category;
+
+const Category = model(
+    'Category',categorySchema
 )
+export default Category;

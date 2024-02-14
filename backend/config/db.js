@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 import mongoose from "mongoose";
 // import { DB_NAME } from "../constants.js";// 
-const DB_NAME="videotube";
+const DB_NAME="ONDCdata";
 	
 dotenv.config({
     path: '../env'

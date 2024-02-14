@@ -10,7 +10,8 @@ const itemsSchema = new Schema({
         required:true,
     },
     category:{
-        type: Schema.ObjectId,
+        type: String,
+        required:true,
         ref:'Category',
     },
     description:{
@@ -36,6 +37,11 @@ const itemsSchema = new Schema({
 },{timestamps: true}
 )
 
-export const Items = model(
-    'Item',
+
+// const Items =model("blog",itemsSchema)
+// module.exports=Items;
+const Items = model(
+    'Item',itemsSchema
 )
+
+export default Items;

@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { Category } from "../models/category.model";
-import { Items } from "../models/item.model";
+import Category  from "../models/category.model.js";
+import  Items  from "../models/item.model.js";
 const router=new Router()
 
 router.post('/',async (req,res)=>{
     const body1=req.body;
-    const items = await body1.category.find({body1.name}).populate("category");
-    console.log("items")
+    const itemsResponse = await body1.category.find({name:body1.name}).populate("category");
+    console.log("itemsResponse")
     return res.staus(200).json({
         //sending these to the frontend
         name:req.name,
