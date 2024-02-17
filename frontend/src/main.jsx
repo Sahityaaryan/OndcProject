@@ -19,20 +19,19 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
-    // element: <ProductCard/>,
     errorElement:<ErrorPage/>,
     children: [
      
       {
-        path: 'user/api/modifycategory',
+        path: 'api/modifycategory',
         element:<ModifyCategory/>,
       },
       {
-        path: 'user/api/addproduct',
+        path: 'api/addproduct',
         element:<AddProduct/>,
       },
       {
-        path: 'user/api/modifyproduct',
+        path: 'api/modifyproduct',
         element:<ModifyProduct/>,
       },
       {
@@ -43,10 +42,7 @@ const router = createBrowserRouter([
         path:'about',
         element:<About/>,
       },
-      {
-        path:'productPreview',
-        element:<ProductCard/>,
-      },
+ 
     ]
   },
  

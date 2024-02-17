@@ -35,11 +35,10 @@ connectDB()
 
 
 
-app.use("/createCategory",categoryCreated);
-app.use("/createItems",itemCreated);
-app.use("/searchItem",itemSearched);
-app.use("/searchCategory",categorySearched);
-app.use("/searchAllItem",allItemSearched);
+app.use("/user/createCategory",categoryCreated);
+app.use("/user/createItems",itemCreated);
+app.use("/user/searchCategory",categorySearched);
+app.use("/user/searchAllItem",allItemSearched);
 
 
 

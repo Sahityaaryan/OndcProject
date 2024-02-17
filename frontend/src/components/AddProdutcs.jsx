@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 export default function AddProduct(){
 
@@ -13,24 +15,71 @@ export default function AddProduct(){
     })
 
 
-//    async function createProduct(e) {
-
-        
-//     }
+ 
     
-    function submitHandler(e) {
+    async function submitHandler(e) {
         e.preventDefault();
 
         // filling the img url
 
          setProduct({...product,["img_url"]:tempImgUrl.split(' ')});
 
+        //  console.log("product: ",product)
 
+
+        
+        const productData =  {
+            name: product.name,
+            category:product.category,
+            description:product.desc,
+            img_url:product.img_url,
+            price:product.price,
+            stock: product.stocks,
+        }
+
+        console.log(productData);
+try {
+  
+    const res = await fetch('/user/createItems',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(productData)
+    })
+  
+    const respObj = await res.json();
+  
+  
+    if(respObj.success)
+    {
+      toast.success(`${productData.name} has been listed under ${productData.category}`);
+    } else {
+      toast.error("Something went wrong");
+    }
+    console.log("res: ",res);
+  } catch (error) {
+    console.log("message error: ",error.message);
+  }
 
     }
 
     return (
         <>
+          <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
+      
+      
         <div className="form_page">
             <h2 className="head_line">
                 Add Products
@@ -38,9 +87,9 @@ export default function AddProduct(){
           
           
           <form  className="form_ondc" onSubmit={submitHandler} style={{"color":"black"}}>
-                <input type="text" className="text_input" onChange={(e)=> setProduct(e.target.value)} value={product.name} placeholder="Enter the name of the category"/>
+                <input type="text" className="text_input" onChange={(e)=> setProduct({...product,['name']:e.target.value})} value={product.name} placeholder="Enter the name of the product"/>
 
-                <input type="text" className="text_input" onChange={(e)=> setProduct({...product,desc:e.target.value})} value={product.desc} placeholder="Tell us about the product"/>
+                <input type="text" className="text_input" onChange={(e)=> setProduct({...product,["desc"]:e.target.value})} value={product.desc} placeholder="Tell us about the product"/>
 
                 <input type="text" className="text_input" onChange={(e)=> setTempImgUrl(e.target.value)} value={tempImgUrl}   placeholder="Add images of your product"/>
                 
@@ -58,7 +107,7 @@ export default function AddProduct(){
                 <input type="text" className="text_input" onChange={(e)=> setProduct({...product,['category']:e.target.value})} value={product.category} placeholder="Enter the category of your product"/>
 
               <button className="accept_submit">
-                <span style={{"color":"white"}} > Add Product</span>
+              <input type="submit" style={{'color':'white'}} value="Create Category" />
               </button>
 
             </form>

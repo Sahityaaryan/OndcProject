@@ -4,7 +4,9 @@ import  Items  from "../models/item.model.js";
 const router=new Router()
 
 router.post("/",async(req,res)=>{
-    // const data = req.body
+    const data = req.body;
+
+    console.log("data: ",data)
     try {
         const successObject=await Items.create({
             name:req.body.name,
@@ -16,6 +18,7 @@ router.post("/",async(req,res)=>{
         });
         res.status(200).json({message:`${successObject.name} item has been listed`,success:true})
     } catch (error) {
+        console.log("error: ",error);
         res.status(500).json({message:error.message,success:false})
     }
 })

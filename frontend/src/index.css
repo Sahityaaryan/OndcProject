@@ -1544,6 +1544,7 @@ align-items: center;
 
 .text_input{
   width: 30%;
+  color: #000000;
   padding: 1rem;
   margin: 1rem;
   border: 0.1rem solid transparent;

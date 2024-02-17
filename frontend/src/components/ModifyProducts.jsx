@@ -12,7 +12,7 @@ export default function ModifyProduct(){
         stocks: '',
     })
 
-
+    
 //    async function createProduct(e) {
 //     }
     
@@ -36,7 +36,7 @@ export default function ModifyProduct(){
           
           
           <form  className="form_ondc" onSubmit={submitHandler} style={{"color":"black"}}>
-                <input type="text" className="text_input" onChange={(e)=> setProduct(e.target.value)} value={product.name} placeholder="Change the name of the category"/>
+                <input type="text" className="text_input" onChange={(e)=> setProduct(e.target.value)} value={product.name} placeholder="Enter the name of the category"/>
 
                 <input type="text" className="text_input" onChange={(e)=> setProduct({...product,desc:e.target.value})} value={product.desc} placeholder="Tell us about the product"/>
 

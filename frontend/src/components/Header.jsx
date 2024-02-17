@@ -88,7 +88,7 @@ export default function Header() {
                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                   <div className="relative grid gap-6 bg-black px-2 py-6 sm:gap-8 ">
                     <NavLink
-                   to={'user/api/modifycategory'}
+                   to={'api/modifycategory'}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
                       <div className="ml-4">
@@ -103,7 +103,7 @@ export default function Header() {
                    
 
                     <NavLink
-                   to={'user/api/addproduct'}
+                   to={'api/addproduct'}
                       
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
@@ -118,7 +118,7 @@ export default function Header() {
                     </NavLink>
 
                     <NavLink
-                   to={'user/api/modifyproduct'}
+                   to={'api/modifyproduct'}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
                       <div className="ml-4">
@@ -131,19 +131,7 @@ export default function Header() {
                       </div>
                     </NavLink>
 
-                    <NavLink
-                   to={'productPreview'}
-                      className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
-                    >
-                      <div className="ml-4">
-                        <p className="text-base font-medium text-white">
-                          Product Preview
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                        Modify an existing products
-                        </p>
-                      </div>
-                    </NavLink>
+                   
 
                   </div>
                 </div>

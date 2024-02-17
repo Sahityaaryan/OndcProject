@@ -16,7 +16,6 @@ const itemsSchema = new Schema({
     },
     description:{
         type:String,
-        unique:true,
         required:true,
     },
     img_url:{
