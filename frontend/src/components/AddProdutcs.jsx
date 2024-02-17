@@ -37,7 +37,7 @@ export default function AddProduct(){
             stock: product.stocks,
         }
 
-        console.log(productData);
+        // console.log("productData: ",productData);
 try {
   
     const res = await fetch('/user/createItems',{
