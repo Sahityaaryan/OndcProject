@@ -117,7 +117,7 @@ export default function Header() {
                       </div>
                     </NavLink>
 
-                    <NavLink
+                    {/* <NavLink
                    to={'api/modifyproduct'}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 transition duration-400"
                     >
@@ -129,7 +129,7 @@ export default function Header() {
                         Modify an existing products
                         </p>
                       </div>
-                    </NavLink>
+                    </NavLink> */}
 
                    
 
