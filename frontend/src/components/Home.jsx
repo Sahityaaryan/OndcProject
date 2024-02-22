@@ -17,7 +17,7 @@ async function fetchCategory(){
 
     const data = resp.data;
 
-    console.log(data)
+    // console.log(data)
 
     if (data){
 
@@ -25,7 +25,7 @@ async function fetchCategory(){
       categoryNames.push(element.categories);
     });
 
-    console.log(categoryNames);
+    // console.log(categoryNames);
 
     setCategories(categoryNames);
     }
@@ -58,14 +58,20 @@ useEffect(()=>{
       <br></br>
       
 
-    <div className="w-full pt-40 flex flex-col justify-center items-center">
+    <div className="w-[90%]  pt-40 flex flex-col justify-center items-center">
             { categories  ?  (
               categories.map(function(category){
+                // console.log("category: " + category);
                 return(
                   <>
-                  <Carousel
+                 {/* <div style={{"height":"10rem"}}> */}
+                 <div className="pt-40 mb-1 text-xl font-semibold tracking-tighter text-center text-white lg:text-7xl md:text-3xl">
+                  {category}
+                 </div>
+                 <Carousel
                 categoryy={category}
                 />
+                 {/* </div> */}
                   </>
                 )
               })

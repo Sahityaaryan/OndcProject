@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 
 export default function Carousel({categoryy}) {
 
+  const uri = "https://media.istockphoto.com/id/1434692524/photo/small-baby-girl-drinking-tetra-drink.jpg?s=2048x2048&w=is&k=20&c=bPu5sdn6JF_Mf5CeuJdZFlVV6VdzX6318E_PSFwvqug=";
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function Carousel({categoryy}) {
         });
 
         const res = await resp.json();
-        console.log("from carousel: ", res);
+        // console.log("from carousel: ", res);
         setProducts(res.data);
       } catch (e) {
         console.log(`Error while fetching the ${categoryy}`, e);
@@ -37,12 +38,16 @@ export default function Carousel({categoryy}) {
     }
 
     getAllProduct().then((res)=>{
-      console.log(`${categoryy} product being fetched`);
+      // console.log(`${categoryy} product being fetched`);
     })
     .catch((e)=>{
       console.log(`Error while fetching the ${categoryy}`, e);
     })
   }, [categoryy]); // The empty array ensures this effect runs only once after the initial render
+
+  useEffect(()=>{
+    // console.log("products: (from carausel): ",products)
+  },[products])
 
   return (
     <>
@@ -62,11 +67,16 @@ export default function Carousel({categoryy}) {
       >
       { products.map(function(product){
 
-        console.log(product.img_url)
+        console.log("product of each img_url: ",product.img_url ," category: ",categoryy)
          return(
           <>
-          <SwiperSlide>
-            <img src={product.img_url}/>
+          <SwiperSlide >
+             <div
+        style={{backgroundColor:'white',width:'100%',height:'100%',"backgroundImage":`url(${product.img_url[0]})`,backgroundSize:'cover',backgroundRepeat:'no-repeat',backgroundPosition:'center'}}
+        ></div>
+        <div
+        // style={{backgroundColor:'white',width:'100%',height:'100%',"backgroundImage":`url(${uri})`,backgroundSize:'cover',backgroundRepeat:'no-repeat',backgroundPosition:'center'}}
+        ></div>
           </SwiperSlide>
           </>
          )

@@ -5,6 +5,7 @@ export default function ProductCard({productDetails}){
 
     console.log("productDetails(card): ", productDetails);
 
+    const src = "https://imgs.search.brave.com/Jn5g2nY3TU67ruUEypU0z-b_7hIi70jS3PU-BdNfFY0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NzA3MzM1Nzc1MjQt/M2EwNDcwNzllODBk/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4Tkh4OGJX/VnlZMlZrWlhOOFpX/NThNSHg4TUh4OGZE/QT0"
     // ste the props here
 
     const [product, setProduct] = useState({
@@ -39,14 +40,14 @@ export default function ProductCard({productDetails}){
         <div className='card-image'>
        {product.img_url ? (
         <>
-         <img src={product.img_url}
-        alt="img"
-        height={200}
-        />
+         <div src={product.img_url}
+        style={{backgroundColor:'red',width:'100%',height:'100%',"backgroundImage":`url(${product.img_url})`,backgroundSize:'cover',backgroundRepeat:'no-repeat',backgroundPosition:'center'}}
+        ></div>
         </>
-       ):(
-        <img src={'https://images.unsplash.com/photo-1609743522653-52354461eb27?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="img" className='card-img'/>
-       )}
+       ):null}
+        {/* <div
+        style={{backgroundColor:'red',backgroundImage:`url(${src})`,backgroundRepeat:'no-repeat',backgroundPosition:'center',width:'100%',height:'100%'}}
+        >hi</div> */}
     </div>
     <div className="category"> {product.category} </div>
     <div className="heading"> {product.desc}

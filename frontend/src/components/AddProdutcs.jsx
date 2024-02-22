@@ -63,7 +63,6 @@ export default function AddProduct(){
             stock: product.stocks,
         }
 
-<<<<<<< HEAD
         // console.log("productData: ",productData);
 try {
   
@@ -88,18 +87,6 @@ try {
   } catch (error) {
     console.log("message error: ",error.message);
   }
-=======
-        console.log(productData);
-
-        PostToBackend(productData)
-        .then((res)=>{
-          console.log(" Added the Product");
-        })
-        .catch((err)=>{
-          console.log(" Error: " + err);
-        })
-
->>>>>>> 6fba1fb (added the categories fetch and fixed the carausel)
 
     }
 
