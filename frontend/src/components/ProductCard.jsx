@@ -3,6 +3,8 @@ import {useEffect, useState} from 'react';
 
 export default function ProductCard({productDetails}){
 
+    console.log("productDetails(card): ", productDetails);
+
     // ste the props here
 
     const [product, setProduct] = useState({
@@ -32,10 +34,15 @@ export default function ProductCard({productDetails}){
         <>
 
 <div className="card">
-    <div className="card-image">
+    {(product.desc ? (
+        <>
+        <div className='card-image'>
        {product.img_url ? (
         <>
-         <img src={product.img_url} alt="img" className='card-img'/>
+         <img src={product.img_url}
+        alt="img"
+        height={200}
+        />
         </>
        ):(
         <img src={'https://images.unsplash.com/photo-1609743522653-52354461eb27?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="img" className='card-img'/>
@@ -49,6 +56,8 @@ export default function ProductCard({productDetails}){
         <p style={{"fontSize":"1rem"}}>Stock: <span>12</span></p>
       </div>
     </div>
+        </>
+    ):null)}
 </div>
 
 

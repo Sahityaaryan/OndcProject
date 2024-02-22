@@ -2,9 +2,42 @@ import Carousel from "./Carousel"
 import SearchWithinCategory from "./SearchWithinCategory";
 import { categories, laptopProducts } from "../../public/dummyData/page"; // delete
 import ProductSearchPreview from "./ProductSearchPreview";
+import { useEffect, useState } from "react";
 export default function Home(){
 
+  const [categories, setCategories] = useState('')
 
+
+async function fetchCategory(){
+  try {
+    const resp = await (await fetch('/user/fetchAllCategories')).json();
+
+    // console.log(resp);
+    const categoryNames = [];
+
+    const data = resp.data;
+
+    console.log(data)
+
+    if (data){
+
+    data.forEach(element => {
+      categoryNames.push(element.categories);
+    });
+
+    console.log(categoryNames);
+
+    setCategories(categoryNames);
+    }
+
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+useEffect(()=>{
+  // console.log("categories ",categories)
+},[categories]);
   
     return(
         <>
@@ -13,8 +46,6 @@ export default function Home(){
         <h1 className="text-[80px] text-center leading-10 tracking-wide font-bold text-white mb-6">
           Create your next catalogue fast and easy
         </h1>
-     
-       
       </div>
 
 
@@ -23,43 +54,33 @@ export default function Home(){
       <h2 className="pt-40 mb-1 text-2xl font-semibold tracking-tighter text-center text-white lg:text-7xl md:text-6xl">
         Categories
       </h2>
+    
       <br></br>
       
-      
+
+    <div className="w-full pt-40 flex flex-col justify-center items-center">
+            { categories  ?  (
+              categories.map(function(category){
+                return(
+                  <>
+                  <Carousel
+                categoryy={category}
+                />
+                  </>
+                )
+              })
+            ):(
+              <button
+              className="inline-flex items-center px-14 py-3 mx-auto font-medium text-black transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-white"
+              onClick={fetchCategory}
+            >
+              <span className="justify-center">Show Categories</span>
+            </button>
+            ) }
+    </div>
 
   
-  <div className="pt-40 ">
-
-   {categories?(
-    <>
-     {categories.map((categoryy)=>{
-
-      return(
-        <>
-
-        <div className="py-4">
-        <h2 className=" mb-2 text-6xl font-semibold tracking-tighter text-center text-gray-100 lg:text-6xl md:text-2xl">
-        {categoryy}
-      </h2>
-
-        <div className="m-3 p-3 ">
-
-      <Carousel category={laptopProducts}/>
-        </div>
-
-        </div>
-        
-        </>
-      )
-    })}
-   
-    </>
-   ):null}
- 
-   
-    {/* <Carousel category={'laptop'}/> */}
-  </div>
-
+  
  
 
 

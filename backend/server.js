@@ -1,10 +1,16 @@
 
 import dotenv from 'dotenv';
 import categoryCreated from './routes/category.js';
+<<<<<<< HEAD
 import itemCreated from './routes/itemCreation.js';
 import itemSearched from './routes/itemSearch.js';
 import categorySearched from './routes/categoryFinder.js';
 import allItemSearched from './routes/fetchAll.js';
+=======
+import productCreated from './routes/itemCreation.js';
+import fetchAllProducts from './routes/fetchAllProducts.js';
+import fetchAllCategories from './routes/fetchAllCategories.js';
+>>>>>>> 6fba1fb (added the categories fetch and fixed the carausel)
 
 	
 dotenv.config({
@@ -36,9 +42,10 @@ connectDB()
 
 
 app.use("/user/createCategory",categoryCreated);
-app.use("/user/createItems",itemCreated);
-app.use("/user/searchCategory",categorySearched);
-app.use("/user/searchAllItem",allItemSearched);
+app.use("/user/createProduct",productCreated);
+app.use("/user/fetchAllCategories",fetchAllCategories);
+app.use("/user/fetchAllProducts",fetchAllProducts); 
+
 
 
 

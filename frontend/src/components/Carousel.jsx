@@ -11,15 +11,38 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useEffect, useState } from 'react';
 
+export default function Carousel({categoryy}) {
 
-import { laptopProducts } from '../../public/dummyData/page';
+  const [products, setProducts] = useState([]);
 
-export default function Carousel({category}) {
+  useEffect(() => {
+    async function getAllProduct() {
+      try {
+        const resp = await fetch('/user/fetchAllProducts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ category: categoryy }),
+        });
 
-  // here we are getting the category carousel
+        const res = await resp.json();
+        console.log("from carousel: ", res);
+        setProducts(res.data);
+      } catch (e) {
+        console.log(`Error while fetching the ${categoryy}`, e);
+      }
+    }
 
-  
+    getAllProduct().then((res)=>{
+      console.log(`${categoryy} product being fetched`);
+    })
+    .catch((e)=>{
+      console.log(`Error while fetching the ${categoryy}`, e);
+    })
+  }, [categoryy]); // The empty array ensures this effect runs only once after the initial render
 
   return (
     <>
@@ -37,8 +60,9 @@ export default function Carousel({category}) {
         modules={[Autoplay, Pagination, Navigation]}
         className="py-24"
       >
-      { category.map(function(product){
-         
+      { products.map(function(product){
+
+        console.log(product.img_url)
          return(
           <>
           <SwiperSlide>

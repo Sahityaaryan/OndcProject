@@ -15,6 +15,36 @@ export default function AddProduct(){
     })
 
 
+    async function PostToBackend(productData){
+
+      try {
+  
+        const res = await fetch('/user/createProduct',{
+          method: 'POST',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(productData)
+        })
+      
+        const respObj = await res.json();
+      
+      
+        if(respObj.success)
+        {
+          toast.success(`${productData.name} has been listed under ${productData.category}`);
+        } else {
+          toast.error("Something went wrong");
+        }
+        console.log("res: ",res);
+
+        return res;
+      } catch (error) {
+        console.log("message error: ",error.message);
+        return error;
+      }
+    }
+
  
     
     async function submitHandler(e) {
@@ -22,11 +52,7 @@ export default function AddProduct(){
 
         // filling the img url
 
-         setProduct({...product,["img_url"]:tempImgUrl.split(' ')});
-
-        //  console.log("product: ",product)
-
-
+        setProduct({...product,["img_url"]:tempImgUrl.split(' ')});
         
         const productData =  {
             name: product.name,
@@ -37,6 +63,7 @@ export default function AddProduct(){
             stock: product.stocks,
         }
 
+<<<<<<< HEAD
         // console.log("productData: ",productData);
 try {
   
@@ -61,6 +88,18 @@ try {
   } catch (error) {
     console.log("message error: ",error.message);
   }
+=======
+        console.log(productData);
+
+        PostToBackend(productData)
+        .then((res)=>{
+          console.log(" Added the Product");
+        })
+        .catch((err)=>{
+          console.log(" Error: " + err);
+        })
+
+>>>>>>> 6fba1fb (added the categories fetch and fixed the carausel)
 
     }
 
@@ -107,7 +146,7 @@ try {
                 <input type="text" className="text_input" onChange={(e)=> setProduct({...product,['category']:e.target.value})} value={product.category} placeholder="Enter the category of your product"/>
 
               <button className="accept_submit">
-              <input type="submit" style={{'color':'white'}} value="Create Category" />
+              <input type="submit" style={{'color':'white'}} value="Add Product" />
               </button>
 
             </form>
