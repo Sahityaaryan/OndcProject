@@ -6,7 +6,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/user':{
-        target:'https://ondcproject.onrender.com/'
+        target:'https://ondcproject.onrender.com'
       }
     }
   },
