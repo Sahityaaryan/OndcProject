@@ -1,16 +1,9 @@
 
 import dotenv from 'dotenv';
 import categoryCreated from './routes/category.js';
-<<<<<<< HEAD
-import itemCreated from './routes/itemCreation.js';
-import itemSearched from './routes/itemSearch.js';
-import categorySearched from './routes/categoryFinder.js';
-import allItemSearched from './routes/fetchAll.js';
-=======
 import productCreated from './routes/itemCreation.js';
 import fetchAllProducts from './routes/fetchAllProducts.js';
 import fetchAllCategories from './routes/fetchAllCategories.js';
->>>>>>> 6fba1fb (added the categories fetch and fixed the carausel)
 
 	
 dotenv.config({
