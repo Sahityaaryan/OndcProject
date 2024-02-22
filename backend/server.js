@@ -38,7 +38,13 @@ app.use("/user/createCategory",categoryCreated);
 app.use("/user/createProduct",productCreated);
 app.use("/user/fetchAllCategories",fetchAllCategories);
 app.use("/user/fetchAllProducts",fetchAllProducts); 
+// app.use("/user/ping",);
 
+app.get("/user/ping",(req,res)=>{
+    res.status(200).json({
+        message:"Got the ping",
+    })
+})
 
 
 
