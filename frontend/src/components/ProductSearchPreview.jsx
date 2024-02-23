@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 export default function ProductSearchPreview({productsData}){
 
-    console.log("productData: ",productsData)
+    // console.log("productData: ",productsData)
 
     return(
         <>

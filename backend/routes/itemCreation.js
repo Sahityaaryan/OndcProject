@@ -6,7 +6,7 @@ const router=new Router()
 router.post("/",async(req,res)=>{
     const data = req.body;
 
-    console.log("data: ",data)
+    // console.log("data: ",data)
     try {
         const successObject=await Items.create({
             name:req.body.name,

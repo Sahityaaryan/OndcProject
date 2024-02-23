@@ -36,7 +36,7 @@ export default function AddProduct(){
         } else {
           toast.error("Something went wrong");
         }
-        console.log("res: ",res);
+        // console.log("res: ",res);
 
         return res;
       } catch (error) {
@@ -83,9 +83,9 @@ try {
     } else {
       toast.error("Something went wrong");
     }
-    console.log("res: ",res);
+    // console.log("res: ",res);
   } catch (error) {
-    console.log("message error: ",error.message);
+    console.log(" error: ",error.message);
   }
 
     }

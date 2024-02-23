@@ -29,7 +29,7 @@ try {
   } else {
     toast.error("Something went wrong");
   }
-  console.log("res: ",res);
+  // console.log("res: ",res);
 } catch (error) {
   console.log("message error: ",error.message);
 }      

@@ -8,11 +8,11 @@ router.post('/',async (req,res)=>{
     try {
         const data = req.body;
     
-        console.log("data: ",data);
+        // console.log("data: ",data);
     
         const resp = await Items.find({ category:data.category });
     
-        console.log("response of fetching the query: ",resp);
+        // console.log("response of fetching the query: ",resp);
 
         res.status(200).json({
             message:'products are fetched',

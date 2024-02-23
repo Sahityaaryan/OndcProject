@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 
 export default function ProductCard({productDetails}){
 
-    console.log("productDetails(card): ", productDetails);
+    // console.log("productDetails(card): ", productDetails);
 
     const src = "https://imgs.search.brave.com/Jn5g2nY3TU67ruUEypU0z-b_7hIi70jS3PU-BdNfFY0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NzA3MzM1Nzc1MjQt/M2EwNDcwNzllODBk/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4Tkh4OGJX/VnlZMlZrWlhOOFpX/NThNSHg4TUh4OGZE/QT0"
     // ste the props here

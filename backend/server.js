@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: true ,  limit: '16kb'}));
 
 connectDB()
 .then((res)=>{
-    console.log("connected to the server");
+   console.log('connected')
 })
 .catch((err)=>{
     console.log(err);

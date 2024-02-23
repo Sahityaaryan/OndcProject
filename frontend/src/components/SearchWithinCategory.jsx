@@ -15,12 +15,12 @@ import ProductSearchPreview from "./ProductSearchPreview";
       body: JSON.stringify({'category': category})
   })
 
-  console.log("resp: ",resp);
+  // console.log("resp: ",resp);
   if(resp.ok){
 
   const res = await resp.json();
 
-  console.log(res);
+  // console.log(res);
 
   setProducts(res.data);
   }
@@ -31,7 +31,7 @@ import ProductSearchPreview from "./ProductSearchPreview";
     e.preventDefault();
 
     fetchCategoryProducts().then((res)=>{
-      console.log("all set");
+      console.log("Got the products");
     }).catch((err)=>{
       console.log("error",err);
     })
@@ -39,7 +39,7 @@ import ProductSearchPreview from "./ProductSearchPreview";
   }
 
   useEffect(()=>{
-    console.log("products: ",products);
+    // console.log("products: ",products);
   },[products])
 
     return(
@@ -69,6 +69,10 @@ import ProductSearchPreview from "./ProductSearchPreview";
             >
               <input type="submit" className="justify-center" value={"Search"}/>
             </button>
+            <br />
+            <br />
+            <br />
+              <p>You can try it by searching "Car" or "Robot"</p>
           </form>
           </div>
           </div>

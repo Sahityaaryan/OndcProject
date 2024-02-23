@@ -31,7 +31,7 @@ async function fetchCategory(){
     }
 
   } catch (e) {
-    console.log(e);
+    console.log("error: ",e);
   }
 }
 

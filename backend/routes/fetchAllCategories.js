@@ -10,7 +10,7 @@ router.get('/',async (req,res)=>{
     
         const resp = await Category.find({});
     
-        console.log("response of fetching the query: ",resp);
+        // console.log("response of fetching the query: ",resp);
 
         res.status(200).json({
             message:'products are fetched',

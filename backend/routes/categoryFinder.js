@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
 
         // Find the category by its name
         const category = await Category.findOne({ categories: categoryName });
-        console.log("category: ", category);
+        // console.log("category: ", category);
         
         if (!category) {
             return res.status(404).json({ message: "Category not found", success: false });

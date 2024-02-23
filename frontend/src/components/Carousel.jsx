@@ -67,7 +67,7 @@ export default function Carousel({categoryy}) {
       >
       { products.map(function(product){
 
-        console.log("product of each img_url: ",product.img_url ," category: ",categoryy)
+        // console.log("product of each img_url: ",product.img_url ," category: ",categoryy)
          return(
           <>
           <SwiperSlide >
